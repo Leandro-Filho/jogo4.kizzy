@@ -102,8 +102,8 @@ class JogoCoop extends Phaser.Scene {
       this.moeda.create(200,100, 'moeda');
       
       this.moeda.create(400,100, 'moeda');
-      this.physics.add.overlap(this.player1, this.moeda,coletarMoedas1, null, this);
-      this.physics.add.overlap(this.player2, this.moeda,coletarMoedas2, null, this);
+      this.physics.add.overlap(this.player1, this.moeda,this.coletarMoedas1, null, this);
+      this.physics.add.overlap(this.player2, this.moeda,this.coletarMoedas2, null, this);
       // adicionando placar 
 this.placar1 = this.add.text(50, 50, 'PEIXES PLAYER1:' + this.score1, {fontSize:'15px', fill:'#495613'});
 this.placar2 = this.add.text(600, 50, 'PEIXES PLAYER2:' + this.score2, {fontSize:'15px', fill:'#495613'});
@@ -225,7 +225,19 @@ this.placar2 = this.add.text(600, 50, 'PEIXES PLAYER2:' + this.score2, {fontSize
             moveCharWithJump(this, 150, 200, this.player2)//chamandoa função colocada abaixo
             moveCharWithJump2(this, 150, 200, this.player1)//chamandoa função colocada abaixo
     }     
+    coletarMoedas1 (player1, moeda)
+    {
+        moeda.disableBody(true, true);
+        this.score1 +=1
+       this.placar1.setText('PEIXES PLAYER1:' + this.score1)
+    }
     
+     coletarMoedas2 (player2, moeda)
+    {
+        moeda.disableBody(true, true);
+        this.score2 +=1
+        this.placar2.setText('PEIXES PLAYER2:' + this.score2)
+    }
             
 }
 //função responsavel por fazer o player2 andar 
@@ -273,16 +285,3 @@ function moveCharWithJump2(scene, speedX, speedY, character) {
 
 }
 
-function coletarMoedas1 (player1, moeda)
-{
-    moeda.disableBody(true, true);
-    score1 +=1
-    placar2.setText('PEIXES PLAYER1:' + score1)
-}
-
-function coletarMoedas2 (player2, moeda)
-{
-    moeda.disableBody(true, true);
-    score2 +=1
-    placar2.setText('PEIXES PLAYER2:' + score2)
-}
