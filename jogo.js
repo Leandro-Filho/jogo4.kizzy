@@ -57,7 +57,7 @@ class JogoCoop extends Phaser.Scene {
 
      preload() {
 //lugar responsavel por pré carregar as imagens
-        this.load.image('fundo', 'assets/fundo-telaEntrada.png');
+        this.load.image('fundo2', 'assets/fundo-telaEntrada.png');
         this.load.image('plataformapedra', 'assets/plataforma-pedra.png');
         this.load.image('plataforma1', 'assets/plataforma-1.png');
         this.load.image('plataformaEliminar', 'assets/plataforma-eliminar.png');
@@ -72,7 +72,7 @@ class JogoCoop extends Phaser.Scene {
 
         //cada variavel do jogo
 
-        this.add.image(400, 300, 'fundo');//imagem de fundo criada
+        this.add.image(400, 300, 'fundo2');//imagem de fundo criada
 
         this.player1 = this.physics.add.sprite(50, 430, 'player1')//caregando o personagem 1, o pinguim normal
         
