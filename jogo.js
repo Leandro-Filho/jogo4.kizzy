@@ -8,7 +8,7 @@ class JogoCoop extends Phaser.Scene {
             // Configurações específicas da cena podem ser adicionadas aqui
               physics: {
                arcade: {
-                debug: true,//ver as chuncksbox dos objetos
+                debug: false,//ver as chuncksbox dos objetos
                 gravity: { y: 300 } //gravidade do jogo
                } 
             } 
